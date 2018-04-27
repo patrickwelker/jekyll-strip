@@ -5,7 +5,7 @@ module Jekyll
   class StripTag < Liquid::Block
 
     def render(context)
-      super.gsub /\n\s*\n/, "\n"
+      super.gsub /(?<=\s)\n\s*\n(?![^<>]*<\/pre>)/, "\n"
     end
 
   end
